@@ -222,6 +222,7 @@ const Dashboard = () => {
         <Flex>
           {userMongo !== undefined ? (
             <div>
+              {console.log(data)}
               <Heading
                 marginLeft="5%"
                 marginTop={["3%", "3%", "1%", "1%"]}
