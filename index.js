@@ -18,9 +18,9 @@ app.use("/", express.static(path.join(__dirname, "/client/build")));
 
 mongoose.connect(process.env.MONGO_URL);
 
-app.get("/", (req, res) => {
-  res.send("Server is up!");
-});
+// app.get("/", (req, res) => {
+//   res.send("Server is up!");
+// });
 
 /* getUsers: gets all of the users in the db (not used currently)
 app.get("/getUsers", (req, res) => {
