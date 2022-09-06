@@ -180,7 +180,7 @@ const Dashboard = () => {
       ) : (
         ""
       )}
-      {data !== undefined && data.length === 0 ? (
+      {data !== undefined || data.length === 0 ? (
         <Flex
           paddingLeft={"5%"}
           paddingRight={"5%"}
@@ -222,7 +222,6 @@ const Dashboard = () => {
         <Flex>
           {userMongo !== undefined ? (
             <div>
-              {console.log(data)}
               <Heading
                 marginLeft="5%"
                 marginTop={["3%", "3%", "1%", "1%"]}
