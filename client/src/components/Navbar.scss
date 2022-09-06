@@ -1,0 +1,56 @@
+.navbar {
+  display: flex;
+  height: 100px;
+  width: 100%;
+  background-color: #41794c;
+  top: 0;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  justify-content: space-between;
+  z-index: 200;
+  h1 {
+    font-family: "Raleway", sans-serif;
+    color: white;
+    margin-left: 5%;
+    margin-top: 15px;
+    font-size: 48px;
+    font-weight: 600;
+  }
+  h2 {
+    color: white;
+  }
+  .chakra-button,
+  .css-ou4cdk {
+    margin-top: 30px;
+    margin-right: 5%;
+    font-family: "Raleway", sans-serif;
+    color: white;
+    font-size: 24px;
+  }
+  .css-ou4cdk:hover {
+    color: #41794c;
+  }
+
+  .css-13c7rae {
+    font-size: 20px;
+    font-family: "Raleway", sans-serif;
+    color: #41794c;
+    font-weight: 600;
+    height: 30px;
+  }
+
+  .css-1ieeump {
+    margin-right: 5%;
+    font-family: "Raleway", sans-serif;
+    color: white;
+    font-size: 24px;
+  }
+
+  .css-1rufx9q {
+    font-size: 20px;
+    font-family: "Raleway", sans-serif;
+    color: white;
+    font-weight: 600;
+    height: 30px;
+  }
+}
