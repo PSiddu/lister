@@ -180,7 +180,7 @@ const Dashboard = () => {
       ) : (
         ""
       )}
-      {data !== undefined || (data !== undefined && data.length === 0) ? (
+      {data === undefined || (data !== undefined && data.length === 0) ? (
         <Flex
           paddingLeft={"5%"}
           paddingRight={"5%"}

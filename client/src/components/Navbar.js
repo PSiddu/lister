@@ -30,7 +30,7 @@ const Navbar = () => {
       return userMongo.username;
     }
     if (userMongo !== undefined && userMongo.username === undefined) {
-      return user.name;
+      return userMongo.email;
     }
     return "";
   };
