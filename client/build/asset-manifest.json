@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/static/css/main.15dbea01.css",
+    "main.js": "/static/js/main.fb14f25e.js",
+    "static/media/to-do-light.jpg": "/static/media/to-do-light.2698ca20854ef639a32d.jpg",
+    "static/media/to-do-dark.jpg": "/static/media/to-do-dark.8105dd4e779da09c5df2.jpg",
+    "index.html": "/index.html",
+    "main.15dbea01.css.map": "/static/css/main.15dbea01.css.map",
+    "main.fb14f25e.js.map": "/static/js/main.fb14f25e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.15dbea01.css",
+    "static/js/main.fb14f25e.js"
+  ]
+}
