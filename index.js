@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const port = 4000;
+const port = process.env.PORT || 4000;
 const mongoose = require("mongoose");
 const UserModel = require("./models/Users");
 const cors = require("cors");
@@ -13,8 +13,8 @@ app.use(cors());
 // for environment variables
 require("dotenv").config();
 
-// // Serving static files from my React front-end
-// app.use("/", express.static(path.join(__dirname, "/client/build")));
+// Serving static files from my React front-end
+app.use("/", express.static(path.join(__dirname, "/client/build")));
 
 mongoose.connect(process.env.MONGO_URL);
 
@@ -157,10 +157,10 @@ app.put("/deleteLists", async (req, res) => {
     });
 });
 
-// //send index.html for any GET route on the server
-// app.get("*", (req, res) => {
-//   res.sendFile(path.join(__dirname, "/client/build/index.html"));
-// });
+//send index.html for any GET route on the server
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "/client/build/index.html"));
+});
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);

@@ -17,8 +17,8 @@ const Navbar = () => {
   useEffect(() => {
     if (user !== undefined) {
       Axios.get(
-        //`https://lister-todo.herokuapp.com/getUser/${user.sub.split("|")[1]}`
-        `http://localhost:4000/getUser/${user.sub.split("|")[1]}`
+        `https://lister-todo.herokuapp.com/getUser/${user.sub.split("|")[1]}`
+        // `http://localhost:4000/getUser/${user.sub.split("|")[1]}`
       ).then((response) => {
         setUserMongo(response.data);
       });

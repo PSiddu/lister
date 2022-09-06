@@ -34,23 +34,22 @@ const List = () => {
   // get user data
   useEffect(() => {
     if (user !== undefined) {
-      Axios.get(`http://localhost:4000/getUser/${user.sub.split("|")[1]}`).then(
-        (response) => {
-          setUserMongo(response.data);
-          setName(
-            response.data.lists.filter((item) => item._id === id)[0].name
-          );
-          setDescription(
-            response.data.lists.filter((item) => item._id === id)[0].description
-          );
-          setItems(
-            response.data.lists.filter((item) => item._id === id)[0].items
-          );
-          setDate(
-            response.data.lists.filter((item) => item._id === id)[0].createdAt
-          );
-        }
-      );
+      Axios.get(
+        // `http://localhost:4000/getUser/${user.sub.split("|")[1]}`
+        `https://lister-todo.herokuapp.com/getUser/${user.sub.split("|")[1]}`
+      ).then((response) => {
+        setUserMongo(response.data);
+        setName(response.data.lists.filter((item) => item._id === id)[0].name);
+        setDescription(
+          response.data.lists.filter((item) => item._id === id)[0].description
+        );
+        setItems(
+          response.data.lists.filter((item) => item._id === id)[0].items
+        );
+        setDate(
+          response.data.lists.filter((item) => item._id === id)[0].createdAt
+        );
+      });
     }
   }, [logIn, user, id]);
 
@@ -58,8 +57,8 @@ const List = () => {
   const handleNewTaskSubmit = () => {
     let cpy_items = [...items];
     Axios.get(
-      // `https://lister-todo.herokuapp.com/getUser/${user.sub.split("|")[1]}`
-      `http://localhost:4000/getUser/${user.sub.split("|")[1]}`
+      `https://lister-todo.herokuapp.com/getUser/${user.sub.split("|")[1]}`
+      // `http://localhost:4000/getUser/${user.sub.split("|")[1]}`
     ).then((response) => {
       const currStamp = response.data.lists.filter((item) => item._id === id)[0]
         .idstamp;
@@ -105,8 +104,8 @@ const List = () => {
     let cpy_items = [...items];
 
     Axios.get(
-      // `https://lister-todo.herokuapp.com/getUser/${user.sub.split("|")[1]}`
-      `http://localhost:4000/getUser/${user.sub.split("|")[1]}`
+      `https://lister-todo.herokuapp.com/getUser/${user.sub.split("|")[1]}`
+      // `http://localhost:4000/getUser/${user.sub.split("|")[1]}`
     ).then((response) => {
       let newItems = cpy_items.filter((x) => {
         return x._id !== iid;
@@ -167,8 +166,8 @@ const List = () => {
     operation
   ) => {
     Axios.put(
-      // `https://lister-todo.herokuapp.com/updateItems`,
-      `http://localhost:4000/updateItems`,
+      `https://lister-todo.herokuapp.com/updateItems`,
+      // `http://localhost:4000/updateItems`,
       {
         id: p_id,
         user: p_user,

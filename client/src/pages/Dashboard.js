@@ -76,8 +76,8 @@ const Dashboard = () => {
   useEffect(() => {
     if (user !== undefined) {
       Axios.get(
-        // `https://lister-todo.herokuapp.com/getUser/${user.sub.split("|")[1]}`,
-        `http://localhost:4000/getUser/${user.sub.split("|")[1]}`
+        `https://lister-todo.herokuapp.com/getUser/${user.sub.split("|")[1]}`
+        // `http://localhost:4000/getUser/${user.sub.split("|")[1]}`
       ).then((response) => {
         setUserMongo(response.data);
         setData(response.data.lists);
@@ -88,10 +88,14 @@ const Dashboard = () => {
   // handler for creating new list
   const createNewList = () => {
     let newID = String(userMongo.idstamp + 1).padStart(8, "0");
-    Axios.put(`http://localhost:4000/createList`, {
-      id: newID,
-      user: userMongo,
-    }).then((response) => {
+    Axios.put(
+      // `http://localhost:4000/createList`
+      `https://lister-todo.herokuapp.com/createList`,
+      {
+        id: newID,
+        user: userMongo,
+      }
+    ).then((response) => {
       // console.log(response);
       navigate(`/list/${newID}`);
     });
@@ -110,10 +114,14 @@ const Dashboard = () => {
       return !deleteIds.includes(item._id);
     });
 
-    Axios.put(`http://localhost:4000/deleteLists`, {
-      lists: newData,
-      user: userMongo,
-    }).then((response) => {
+    Axios.put(
+      // `http://localhost:4000/deleteLists`
+      `https://lister-todo.herokuapp.com/deleteLists`,
+      {
+        lists: newData,
+        user: userMongo,
+      }
+    ).then((response) => {
       setData(newData);
       setSelectedRecords([]);
     });
