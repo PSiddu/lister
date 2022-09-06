@@ -25,6 +25,16 @@ const Navbar = () => {
     }
   }, [logIn, user]);
 
+  const displayName = () => {
+    if (userMongo !== undefined) {
+      return userMongo.username;
+    }
+    if (userMongo !== undefined && userMongo.username === undefined) {
+      return user.name;
+    }
+    return "";
+  };
+
   return (
     <div className="navbar">
       <h1 onClick={() => navigate(`/`)} style={{ cursor: "pointer" }}>
@@ -45,14 +55,20 @@ const Navbar = () => {
             _expanded={{ color: "#41794c", background: "gray.100" }}
             _hover={{ color: "#41794c", background: "gray.100" }}
           >
-            Hi, {userMongo !== undefined ? userMongo.username : ""}!
+            Hi, {displayName()}!
           </MenuButton>
           <MenuList>
             <MenuItem onClick={() => navigate(`/dashboard`)}>
               Dashboard
             </MenuItem>
             <MenuItem
-              onClick={() => logout({ returnTo: "http://localhost:3000/" })}
+              onClick={() =>
+                logout({
+                  returnTo:
+                    //"http://localhost:3000/"
+                    "https://lister-todo.herokuapp.com/",
+                })
+              }
             >
               Log Out
             </MenuItem>
