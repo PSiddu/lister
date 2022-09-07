@@ -96,7 +96,7 @@ const Dashboard = () => {
         user: userMongo,
       }
     ).then((response) => {
-      // console.log(response);
+      console.log(response);
       navigate(`/list/${newID}`);
     });
   };
